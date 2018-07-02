@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Youtube Download</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Youtube Download</h3>{{state}}
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button ion-button full (click)="download()">
+     <ion-icon full name="download">download</ion-icon>
+  </button>
+
+  <button ion-button full (click)="show()"></button>
+  <button ion-button full (click)="play_v()">
+    <ion-icon full name="play">Play</ion-icon>
+ </button>
+ <video #video1 preload="auto" autoplay loop style="width:100%;border:1px solid #000;" playsinline >
+  <source src= {{src}} type='video/mp4'>
+</video>
+  <ion-input placeholder="Text Input" [(ngModel)]="p"></ion-input>
+ 
+  
+  <ion-list no-lines>
+    <button ion-item *ngFor="let list of lists" (click)="itemSelected(item)">
+      {{ list }}
+    </button> 
+  </ion-list>
+</ion-content>
